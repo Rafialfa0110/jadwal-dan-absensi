@@ -10,6 +10,38 @@
 </head>
 
 <body>
+            <!-- ==============================
+     HALAMAN LOGIN
+     ============================== -->
+
+<div id="loginHalaman" class="halaman aktif">
+
+    <div class="login-card">
+
+        <h1>📚 Jadwal & Absensi</h1>
+        <p>Silakan login sebagai mahasiswa</p>
+
+        <label for="namaLogin">👤 Nama Mahasiswa</label>
+        <input
+            type="text"
+            id="namaLogin"
+            placeholder="Masukkan nama mahasiswa"
+        >
+
+        <label for="nimLogin">🪪 NIM</label>
+        <input
+            type="text"
+            id="nimLogin"
+            placeholder="Masukkan NIM"
+        >
+
+        <button onclick="loginMahasiswa()">
+            🔐 Masuk
+        </button>
+
+    </div>
+
+</div>
 
     <!-- HEADER -->
     <header>
@@ -22,7 +54,7 @@
     <main>
 
         <!-- BERANDA -->
-        <section id="beranda" class="halaman aktif">
+        <section id="beranda" class="halaman">
 
             <div class="card profil">
 
