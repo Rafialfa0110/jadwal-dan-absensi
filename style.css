@@ -8,257 +8,9 @@ body {
     font-family: Arial, sans-serif;
     background: #f2f4f7;
     color: #333;
-
     padding-bottom: 80px;
 }
 
-
-/* HEADER */
-
-header {
-    background: #2563eb;
-    color: white;
-    padding: 25px 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin-bottom: 8px;
-}
-
-
-/* HALAMAN */
-
-main {
-    width: 90%;
-    max-width: 700px;
-    margin: 20px auto;
-}
-
-.halaman {
-    display: none;
-}
-
-.halaman.aktif {
-    display: block;
-}
-
-
-/* CARD */
-
-.card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.card h2 {
-    margin-bottom: 15px;
-}
-
-
-/* JADWAL */
-
-.jadwal {
-    border-left: 5px solid #2563eb;
-
-    padding: 15px;
-    margin-bottom: 12px;
-
-    background: #f8fafc;
-
-    border-radius: 8px;
-}
-
-.jadwal h3 {
-    margin-bottom: 8px;
-}
-
-.jadwal p {
-    margin: 5px 0;
-}
-
-
-/* SELECT */
-
-select {
-    width: 100%;
-
-    padding: 13px;
-
-    margin: 10px 0;
-
-    border: 1px solid #ccc;
-
-    border-radius: 8px;
-
-    font-size: 15px;
-}
-
-
-/* BUTTON */
-
-.card button {
-    width: 100%;
-
-    padding: 13px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: #2563eb;
-
-    color: white;
-
-    font-size: 16px;
-
-    cursor: pointer;
-}
-
-.card button:hover {
-    background: #1d4ed8;
-}
-
-
-/* HASIL ABSENSI */
-
-#hasilAbsensi {
-    margin-top: 15px;
-
-    font-weight: bold;
-
-    text-align: center;
-}
-
-
-/* RIWAYAT */
-
-.absen-item {
-    padding: 12px;
-
-    border-bottom: 1px solid #ddd;
-
-    margin-bottom: 8px;
-}
-
-
-/* NAVIGASI BAWAH */
-
-.bottom-nav {
-    position: fixed;
-
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-
-    background: white;
-
-    display: flex;
-
-    justify-content: space-around;
-
-    padding: 10px 5px;
-
-    box-shadow:
-        0 -2px 10px rgba(0, 0, 0, 0.1);
-
-    z-index: 100;
-}
-
-.bottom-nav button {
-    background: none;
-
-    border: none;
-
-    cursor: pointer;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 4px;
-
-    font-size: 20px;
-}
-
-.bottom-nav span {
-    font-size: 12px;
-}
-.profil {
-    border-left: 5px solid #2563eb;
-}
-
-.profil p {
-    margin-top: 8px;
-}
-label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 5px;
-}
-
-.jadwal-item {
-    background: #f5f7fa;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-left: 4px solid #2563eb;
-    border-radius: 8px;
-}
-
-.jadwal-item h3 {
-    margin-top: 0;
-}
-
-.hapus-jadwal {
-    background: #dc2626;
-    margin-top: 8px;
-}
-/* ==============================
-   RINGKASAN ABSENSI
-   ============================== */
-
-.ringkasan {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.ringkasan-item {
-    text-align: center;
-    padding: 15px;
-    border-radius: 12px;
-    background: #f5f5f5;
-}
-
-.ringkasan-item h3 {
-    font-size: 28px;
-    margin: 0 0 5px;
-}
-
-.ringkasan-item p {
-    margin: 0;
-    font-size: 13px;
-}
 /* ==============================
    HALAMAN LOGIN
    ============================== */
@@ -304,7 +56,6 @@ select {
 
 .login-card input {
     width: 100%;
-    box-sizing: border-box;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -327,75 +78,11 @@ select {
 .login-card button:hover {
     background: #1d4ed8;
 }
+
 /* ==============================
-   SEMBUNYIKAN WEBSITE SEBELUM LOGIN
+   DEMO LOGIN
    ============================== */
 
-body:has(#loginHalaman.aktif) header,
-body:has(#loginHalaman.aktif) main,
-body:has(#loginHalaman.aktif) .bottom-nav {
-    display: none;
-}
-/* ==============================
-   LOGIN
-   ============================== */
-
-#loginHalaman {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f1f5f9;
-}
-
-.login-card {
-    width: 90%;
-    max-width: 400px;
-    padding: 30px;
-    background: white;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-.login-card h1 {
-    text-align: center;
-    margin-bottom: 8px;
-}
-
-.login-card p {
-    text-align: center;
-    color: #666;
-    margin-bottom: 25px;
-}
-
-.login-card label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-.login-card input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 15px;
-}
-
-.login-card button {
-    width: 100%;
-    margin-top: 25px;
-    padding: 13px;
-    border: none;
-    border-radius: 10px;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-}
-/* DEMO LOGIN */
 .demo-login {
     margin-top: 18px;
     padding: 12px 15px;
@@ -416,4 +103,225 @@ body:has(#loginHalaman.aktif) .bottom-nav {
     margin: 4px 0;
     text-align: left;
     color: #475569;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+
+header {
+    background: #2563eb;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+/* ==============================
+   HALAMAN
+   ============================== */
+
+main {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.halaman {
+    display: none;
+}
+
+.halaman.aktif {
+    display: block;
+}
+
+/* ==============================
+   CARD
+   ============================== */
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+/* ==============================
+   PROFIL
+   ============================== */
+
+.profil {
+    border-left: 5px solid #2563eb;
+}
+
+.profil p {
+    margin-top: 8px;
+}
+
+/* ==============================
+   INPUT & SELECT
+   ============================== */
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+select {
+    font-size: 15px;
+}
+
+/* ==============================
+   BUTTON
+   ============================== */
+
+.card button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #1d4ed8;
+}
+
+/* ==============================
+   JADWAL
+   ============================== */
+
+.jadwal {
+    border-left: 5px solid #2563eb;
+    padding: 15px;
+    margin-bottom: 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.jadwal h3 {
+    margin-bottom: 8px;
+}
+
+.jadwal p {
+    margin: 5px 0;
+}
+
+.jadwal-item {
+    background: #f5f7fa;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+}
+
+.jadwal-item h3 {
+    margin-top: 0;
+}
+
+.hapus-jadwal {
+    background: #dc2626;
+    margin-top: 8px;
+}
+
+/* ==============================
+   RINGKASAN ABSENSI
+   ============================== */
+
+.ringkasan {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.ringkasan-item {
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    background: #f5f5f5;
+}
+
+.ringkasan-item h3 {
+    font-size: 28px;
+    margin: 0 0 5px;
+}
+
+.ringkasan-item p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* ==============================
+   HASIL ABSENSI
+   ============================== */
+
+#hasilAbsensi {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ==============================
+   RIWAYAT
+   ============================== */
+
+.absen-item {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+}
+
+/* ==============================
+   NAVIGASI BAWAH
+   ============================== */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 5px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.bottom-nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 20px;
+}
+
+.bottom-nav span {
+    font-size: 12px;
 }
