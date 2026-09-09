@@ -762,3 +762,23 @@ function loginMahasiswa() {
         headerText.textContent = "Selamat datang, " + nama + " 👋";
     }
 }
+// ==============================
+// LOGOUT MAHASISWA
+// ==============================
+
+function logoutMahasiswa() {
+
+    // Hapus data login
+    localStorage.removeItem("namaMahasiswa");
+    localStorage.removeItem("nimMahasiswa");
+
+    // Sembunyikan Beranda
+    document.getElementById("beranda").classList.remove("aktif");
+
+    // Tampilkan halaman login
+    document.getElementById("loginHalaman").classList.add("aktif");
+
+    // Kosongkan input login
+    document.getElementById("namaLogin").value = "";
+    document.getElementById("nimLogin").value = "";
+}
