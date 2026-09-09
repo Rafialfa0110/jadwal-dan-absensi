@@ -11,20 +11,35 @@ body {
     padding-bottom: 80px;
 }
 
-/* ==============================
-   HALAMAN LOGIN
-   ============================== */
+/* =========================
+   HALAMAN
+========================= */
 
+.halaman {
+    display: none;
+}
+
+.halaman.aktif {
+    display: block;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+/* Saat belum login, login tampil */
 #loginHalaman {
     min-height: 100vh;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background: #f1f5f9;
+    padding: 20px;
 }
 
-#loginHalaman:not(.aktif) {
-    display: none;
+/* Login hanya tampil kalau memiliki class aktif */
+#loginHalaman.aktif {
+    display: flex;
 }
 
 .login-card {
@@ -41,7 +56,7 @@ body {
     margin-bottom: 8px;
 }
 
-.login-card p {
+.login-card > p {
     text-align: center;
     color: #666;
     margin-bottom: 25px;
@@ -79,9 +94,7 @@ body {
     background: #1d4ed8;
 }
 
-/* ==============================
-   DEMO LOGIN
-   ============================== */
+/* Demo Login */
 
 .demo-login {
     margin-top: 18px;
@@ -105,9 +118,20 @@ body {
     color: #475569;
 }
 
-/* ==============================
+/* =========================
+   SEMBUNYIKAN APLIKASI
+   SAAT BELUM LOGIN
+========================= */
+
+body:has(#loginHalaman.aktif) header,
+body:has(#loginHalaman.aktif) main,
+body:has(#loginHalaman.aktif) .bottom-nav {
+    display: none;
+}
+
+/* =========================
    HEADER
-   ============================== */
+========================= */
 
 header {
     background: #2563eb;
@@ -120,9 +144,9 @@ header h1 {
     margin-bottom: 8px;
 }
 
-/* ==============================
-   HALAMAN
-   ============================== */
+/* =========================
+   MAIN
+========================= */
 
 main {
     width: 90%;
@@ -130,17 +154,9 @@ main {
     margin: 20px auto;
 }
 
-.halaman {
-    display: none;
-}
-
-.halaman.aktif {
-    display: block;
-}
-
-/* ==============================
+/* =========================
    CARD
-   ============================== */
+========================= */
 
 .card {
     background: white;
@@ -154,9 +170,9 @@ main {
     margin-bottom: 15px;
 }
 
-/* ==============================
+/* =========================
    PROFIL
-   ============================== */
+========================= */
 
 .profil {
     border-left: 5px solid #2563eb;
@@ -166,52 +182,9 @@ main {
     margin-top: 8px;
 }
 
-/* ==============================
-   INPUT & SELECT
-   ============================== */
-
-label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 5px;
-}
-
-select {
-    font-size: 15px;
-}
-
-/* ==============================
-   BUTTON
-   ============================== */
-
-.card button {
-    width: 100%;
-    padding: 13px;
-    border: none;
-    border-radius: 8px;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.card button:hover {
-    background: #1d4ed8;
-}
-
-/* ==============================
+/* =========================
    JADWAL
-   ============================== */
+========================= */
 
 .jadwal {
     border-left: 5px solid #2563eb;
@@ -241,14 +214,73 @@ select {
     margin-top: 0;
 }
 
+/* =========================
+   INPUT & SELECT
+========================= */
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+select {
+    font-size: 15px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.card button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #1d4ed8;
+}
+
 .hapus-jadwal {
     background: #dc2626;
     margin-top: 8px;
 }
 
-/* ==============================
-   RINGKASAN ABSENSI
-   ============================== */
+/* =========================
+   ABSENSI
+========================= */
+
+#hasilAbsensi {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.absen-item {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   RINGKASAN
+========================= */
 
 .ringkasan {
     display: grid;
@@ -274,29 +306,9 @@ select {
     font-size: 13px;
 }
 
-/* ==============================
-   HASIL ABSENSI
-   ============================== */
-
-#hasilAbsensi {
-    margin-top: 15px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* ==============================
-   RIWAYAT
-   ============================== */
-
-.absen-item {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 8px;
-}
-
-/* ==============================
+/* =========================
    NAVIGASI BAWAH
-   ============================== */
+========================= */
 
 .bottom-nav {
     position: fixed;
@@ -324,4 +336,28 @@ select {
 
 .bottom-nav span {
     font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 600px) {
+
+    .login-card {
+        width: 95%;
+        padding: 25px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    .ringkasan {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 20px 15px;
+    }
 }
