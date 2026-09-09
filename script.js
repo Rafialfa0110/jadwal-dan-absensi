@@ -647,11 +647,7 @@ function tampilkanDaftarJadwal() {
 
     });
 }
-function tampilkanDaftarJadwal() {
 
-    // kode tampilkan jadwal
-
-}
 
 
 // ==============================
@@ -681,6 +677,7 @@ function hapusJadwal(id) {
 tampilkanDaftarJadwal();
 tampilkanJadwalHariIni();
 tampilkanPilihanMataKuliah();
+
 // ==============================
 // RINGKASAN ABSENSI
 // ==============================
@@ -719,5 +716,49 @@ function tampilkanRingkasan() {
             0
         );
 }
-
 tampilkanRingkasan();
+// ==============================
+// LOGIN MAHASISWA
+// ==============================
+
+function loginMahasiswa() {
+
+    const nama = document.getElementById("namaLogin").value.trim();
+    const nim = document.getElementById("nimLogin").value.trim();
+
+    // Cek apakah nama dan NIM sudah diisi
+    if (nama === "" || nim === "") {
+        alert("⚠️ Nama mahasiswa dan NIM harus diisi!");
+        return;
+    }
+
+    // Simpan data mahasiswa
+    localStorage.setItem("namaMahasiswa", nama);
+    localStorage.setItem("nimMahasiswa", nim);
+
+    // Sembunyikan halaman login
+    document.getElementById("loginHalaman").classList.remove("aktif");
+
+    // Tampilkan halaman beranda
+    document.getElementById("beranda").classList.add("aktif");
+
+    // Tampilkan nama dan NIM di profil
+    const profil = document.querySelector(".profil");
+
+    if (profil) {
+        profil.querySelector("h2").textContent = "👋 Halo, " + nama;
+
+        const dataProfil = profil.querySelectorAll("p");
+
+        if (dataProfil[0]) {
+            dataProfil[0].innerHTML = "<strong>NIM:</strong> " + nim;
+        }
+    }
+
+    // Ubah tulisan pada header
+    const headerText = document.querySelector("header p");
+
+    if (headerText) {
+        headerText.textContent = "Selamat datang, " + nama + " 👋";
+    }
+}
