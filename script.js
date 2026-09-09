@@ -723,44 +723,69 @@ tampilkanRingkasan();
 
 function loginMahasiswa() {
 
-    const nama = document.getElementById("namaLogin").value.trim();
-    const nim = document.getElementById("nimLogin").value.trim();
+    const inputNama = document.getElementById("namaLogin");
+    const inputNim = document.getElementById("nimLogin");
 
-    // Cek apakah nama dan NIM sudah diisi
+    const loginHalaman = document.getElementById("loginHalaman");
+    const beranda = document.getElementById("beranda");
+
+    // Pastikan elemen login ditemukan
+    if (!inputNama || !inputNim || !loginHalaman || !beranda) {
+        alert("❌ Terjadi kesalahan pada halaman login.");
+        return;
+    }
+
+    const nama = inputNama.value.trim();
+    const nim = inputNim.value.trim();
+
+    // Cek input
     if (nama === "" || nim === "") {
         alert("⚠️ Nama mahasiswa dan NIM harus diisi!");
         return;
     }
 
-    // Simpan data mahasiswa
+    // Simpan data login
     localStorage.setItem("namaMahasiswa", nama);
     localStorage.setItem("nimMahasiswa", nim);
 
-    // Sembunyikan halaman login
-    document.getElementById("loginHalaman").classList.remove("aktif");
+    // Tutup halaman login
+    loginHalaman.classList.remove("aktif");
 
-    // Tampilkan halaman beranda
-    document.getElementById("beranda").classList.add("aktif");
+    // Buka halaman beranda
+    beranda.classList.add("aktif");
 
-    // Tampilkan nama dan NIM di profil
+    // Update profil
     const profil = document.querySelector(".profil");
 
     if (profil) {
-        profil.querySelector("h2").textContent = "👋 Halo, " + nama;
+
+        const judulProfil = profil.querySelector("h2");
+
+        if (judulProfil) {
+            judulProfil.textContent = "👋 Halo, " + nama;
+        }
 
         const dataProfil = profil.querySelectorAll("p");
 
-        if (dataProfil[0]) {
-            dataProfil[0].innerHTML = "<strong>NIM:</strong> " + nim;
+        if (dataProfil.length > 0) {
+            dataProfil[0].innerHTML =
+                "<strong>NIM:</strong> " + nim;
         }
     }
 
-    // Ubah tulisan pada header
+    // Update header
     const headerText = document.querySelector("header p");
 
     if (headerText) {
-        headerText.textContent = "Selamat datang, " + nama + " 👋";
+        headerText.textContent =
+            "Selamat datang, " + nama + " 👋";
     }
+
+    // Update data beranda
+    tampilkanRingkasan();
+    tampilkanJadwalHariIni();
+
+    console.log("Login berhasil:", nama, nim);
 }
 // ==============================
 // LOGOUT MAHASISWA
