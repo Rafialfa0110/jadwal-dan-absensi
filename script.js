@@ -681,3 +681,43 @@ function hapusJadwal(id) {
 tampilkanDaftarJadwal();
 tampilkanJadwalHariIni();
 tampilkanPilihanMataKuliah();
+// ==============================
+// RINGKASAN ABSENSI
+// ==============================
+
+function tampilkanRingkasan() {
+
+    const dataJadwal = ambilJadwal();
+
+    const riwayat =
+        JSON.parse(
+            localStorage.getItem("riwayatAbsensi")
+        ) || [];
+
+    const totalJadwal =
+        document.getElementById("totalJadwal");
+
+    const sudahHadir =
+        document.getElementById("sudahHadir");
+
+    const belumAbsen =
+        document.getElementById("belumAbsen");
+
+    if (!totalJadwal || !sudahHadir || !belumAbsen) {
+        return;
+    }
+
+    totalJadwal.textContent =
+        dataJadwal.length;
+
+    sudahHadir.textContent =
+        riwayat.length;
+
+    belumAbsen.textContent =
+        Math.max(
+            dataJadwal.length - riwayat.length,
+            0
+        );
+}
+
+tampilkanRingkasan();
