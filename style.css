@@ -259,3 +259,140 @@ select {
     margin: 0;
     font-size: 13px;
 }
+/* ==============================
+   HALAMAN LOGIN
+   ============================== */
+
+#loginHalaman {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+}
+
+#loginHalaman:not(.aktif) {
+    display: none;
+}
+
+.login-card {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.login-card h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.login-card p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.login-card label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.login-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.login-card button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    background: #1d4ed8;
+}
+/* ==============================
+   SEMBUNYIKAN WEBSITE SEBELUM LOGIN
+   ============================== */
+
+body:has(#loginHalaman.aktif) header,
+body:has(#loginHalaman.aktif) main,
+body:has(#loginHalaman.aktif) .bottom-nav {
+    display: none;
+}
+/* ==============================
+   LOGIN
+   ============================== */
+
+#loginHalaman {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+}
+
+.login-card {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.login-card h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.login-card p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.login-card label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.login-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.login-card button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
