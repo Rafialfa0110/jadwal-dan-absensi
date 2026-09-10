@@ -486,3 +486,20 @@ button[onclick="logoutMahasiswa()"]:hover {
 #jadwalHariIni > div:last-child {
     margin-bottom: 0;
 }
+#loginHalaman {
+    min-height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-image:
+        linear-gradient(
+            rgba(10, 55, 100, 0.55),
+            rgba(10, 55, 100, 0.55)
+        ),
+        url("akn-pacitan.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
