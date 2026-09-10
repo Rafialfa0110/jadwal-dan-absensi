@@ -148,17 +148,12 @@ function absen() {
 
 
     // Data absensi
-    const dataAbsensi = {
-
-        mataKuliah: mataKuliah,
-
-        tanggal: tanggal,
-
-        waktu: waktu,
-
-        status: "Hadir"
-
-    };
+const dataAbsensi = {
+    mataKuliah: mataKuliah,
+    tanggal: tanggal,
+    waktu: waktu,
+    status: document.getElementById("statusAbsensi").value
+};
 
 
     // Simpan
