@@ -695,21 +695,58 @@ function tampilkanRingkasan() {
     const belumAbsen =
         document.getElementById("belumAbsen");
 
+    const jumlahIzin =
+        document.getElementById("jumlahIzin");
+
+    const jumlahSakit =
+        document.getElementById("jumlahSakit");
+
+    const jumlahAlpa =
+        document.getElementById("jumlahAlpa");
+
     if (!totalJadwal || !sudahHadir || !belumAbsen) {
         return;
     }
+
+    const hadir = riwayat.filter(
+        data => data.status === "Hadir"
+    ).length;
+
+    const izin = riwayat.filter(
+        data => data.status === "Izin"
+    ).length;
+
+    const sakit = riwayat.filter(
+        data => data.status === "Sakit"
+    ).length;
+
+    const alpa = riwayat.filter(
+        data => data.status === "Alpa"
+    ).length;
 
     totalJadwal.textContent =
         dataJadwal.length;
 
     sudahHadir.textContent =
-        riwayat.length;
+        hadir;
 
     belumAbsen.textContent =
         Math.max(
             dataJadwal.length - riwayat.length,
             0
         );
+
+    if (jumlahIzin) {
+        jumlahIzin.textContent = izin;
+    }
+
+    if (jumlahSakit) {
+        jumlahSakit.textContent = sakit;
+    }
+
+    if (jumlahAlpa) {
+        jumlahAlpa.textContent = alpa;
+    }
 }
 tampilkanRingkasan();
 // ==============================
