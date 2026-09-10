@@ -487,16 +487,23 @@ button[onclick="logoutMahasiswa()"]:hover {
     margin-bottom: 0;
 }
 #loginHalaman {
-    min-height: 100vh;
+    min-height: 100vh !important;
+    width: 100% !important;
     display: none;
     justify-content: center;
     align-items: center;
     padding: 20px;
 
-    background: linear-gradient(
-        rgba(10, 55, 100, 0.45),
-        rgba(10, 55, 100, 0.45)
-    ), url("./akn-pacitan.jpg") center center / cover no-repeat;
+    background-image:
+        linear-gradient(
+            rgba(10, 55, 100, 0.45),
+            rgba(10, 55, 100, 0.45)
+        ),
+        url("https://rafialfa0110.github.io/jadwal-dan-absensi/akn-pacitan.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #loginHalaman.aktif {
