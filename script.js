@@ -758,7 +758,7 @@ const persentaseKehadiran =
 
     persentaseKehadiran.textContent =
         persentase.toFixed(1) + "%";
-
+  }
 }
 tampilkanRingkasan();
 // ==============================
