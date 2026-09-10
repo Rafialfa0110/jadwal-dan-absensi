@@ -666,7 +666,7 @@ function hapusJadwal(id) {
     tampilkanJadwalHariIni();
     tampilkanPilihanMataKuliah();
 
-    alert("🗑️ Jadwal berhasil dihapus.");
+    document.getElementById("modalSukses").classList.add("aktif");
 }
 
 tampilkanDaftarJadwal();
@@ -890,3 +890,6 @@ function tampilkanTanggalHariIni() {
 }
 
 tampilkanTanggalHariIni();
+function tutupModalSukses() {
+    document.getElementById("modalSukses").classList.remove("aktif");
+}
