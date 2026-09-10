@@ -491,15 +491,14 @@ button[onclick="logoutMahasiswa()"]:hover {
     display: none;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 
-    background-image:
-        linear-gradient(
-            rgba(10, 55, 100, 0.55),
-            rgba(10, 55, 100, 0.55)
-        ),
-        url("akn-pacitan.jpg");
+    background: linear-gradient(
+        rgba(10, 55, 100, 0.45),
+        rgba(10, 55, 100, 0.45)
+    ), url("./akn-pacitan.jpg") center center / cover no-repeat;
+}
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+#loginHalaman.aktif {
+    display: flex;
 }
