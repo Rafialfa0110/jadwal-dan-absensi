@@ -896,8 +896,13 @@ tampilkanTanggalHariIni();
 function tutupModalSukses() {
     document.getElementById("modalSukses").classList.remove("aktif");
 }
-    tampilkanModalSukses(
-    "Jadwal berhasil dihapus!",
-    "Data jadwal telah berhasil dihapus dari sistem."
-);
+function tampilkanModalSukses(judul, pesan) {
+    document.querySelector("#modalSukses h2").textContent = judul;
+    document.querySelector("#modalSukses p").textContent = pesan;
 
+    document.getElementById("modalSukses").classList.add("aktif");
+}
+
+function tutupModalSukses() {
+    document.getElementById("modalSukses").classList.remove("aktif");
+}
