@@ -596,7 +596,10 @@ function tambahJadwal() {
     document.getElementById("ruangan").value = "";
 
 
-    alert("✅ Jadwal berhasil ditambahkan!");
+   tampilkanModalSukses(
+    "Jadwal berhasil ditambahkan!",
+    "Data jadwal telah berhasil disimpan ke dalam sistem."
+);
 }
 
 // ==============================
@@ -893,3 +896,8 @@ tampilkanTanggalHariIni();
 function tutupModalSukses() {
     document.getElementById("modalSukses").classList.remove("aktif");
 }
+    tampilkanModalSukses(
+    "Jadwal berhasil dihapus!",
+    "Data jadwal telah berhasil dihapus dari sistem."
+);
+
