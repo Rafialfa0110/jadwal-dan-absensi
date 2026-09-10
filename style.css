@@ -540,15 +540,16 @@ button[onclick="logoutMahasiswa()"]:hover {
 .login-feature {
     display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
+    gap: 16px;
+    margin-bottom: 22px;
 }
 
 .login-feature > span {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
     background: rgba(255, 255, 255, 0.18);
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -557,11 +558,14 @@ button[onclick="logoutMahasiswa()"]:hover {
 
 .login-feature strong {
     display: block;
-    font-size: 14px;
-    margin-bottom: 3px;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: white;
 }
 
 .login-feature small {
+    display: block;
     font-size: 12px;
-    opacity: 0.85;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
 }
