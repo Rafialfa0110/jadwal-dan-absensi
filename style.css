@@ -400,7 +400,3 @@ select {
     font-size: 14px;
     margin: 0;
 }
-/* Memastikan Jadwal Hari Ini berada di bawah Ringkasan */
-.ringkasan > .card {
-    grid-column: 1 / -1;
-}
