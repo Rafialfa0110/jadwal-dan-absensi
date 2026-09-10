@@ -807,3 +807,42 @@ function logoutMahasiswa() {
     document.getElementById("namaLogin").value = "";
     document.getElementById("nimLogin").value = "";
 }
+function tampilkanTanggalHariIni() {
+    const tanggal = new Date();
+
+    const pilihan = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    };
+
+    const tanggalElement =
+        document.getElementById("tanggalHariIni");
+
+    if (tanggalElement) {
+        tanggalElement.textContent =
+            tanggal.toLocaleDateString("id-ID", pilihan);
+    }
+}
+
+function tampilkanTanggalHariIni() {
+    const tanggal = new Date();
+
+    const pilihan = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    };
+
+    const tanggalElement =
+        document.getElementById("tanggalHariIni");
+
+    if (tanggalElement) {
+        tanggalElement.textContent =
+            tanggal.toLocaleDateString("id-ID", pilihan);
+    }
+}
+
+tampilkanTanggalHariIni();
