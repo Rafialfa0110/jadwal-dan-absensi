@@ -509,3 +509,58 @@ button[onclick="logoutMahasiswa()"]:hover {
 #loginHalaman.aktif {
     display: flex;
 }
+/* Tampilan informasi login */
+.login-info {
+    width: 420px;
+    color: white;
+    margin-right: 60px;
+}
+
+.login-brand {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.login-info h2 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin: 0 0 18px;
+}
+
+.login-info > p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+.login-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.login-feature > span {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.login-feature strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.login-feature small {
+    font-size: 12px;
+    opacity: 0.85;
+}
