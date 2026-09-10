@@ -409,3 +409,38 @@ select {
     font-size: 14px;
     margin: 0;
 }
+/* ==============================
+   PERBAIKAN TAMPILAN RINGKASAN
+   ============================== */
+
+.ringkasan {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 15px;
+}
+
+.ringkasan-item {
+    background: #f8fafc;
+    padding: 16px 10px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e8edf3;
+    box-sizing: border-box;
+}
+
+/* Kartu persentase memenuhi 3 kolom */
+.ringkasan-item:last-child {
+    grid-column: 1 / -1;
+}
+
+.ringkasan-item h3 {
+    font-size: 25px;
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+
+.ringkasan-item p {
+    margin: 0;
+    font-size: 12px;
+}
