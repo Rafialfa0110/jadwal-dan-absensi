@@ -703,7 +703,10 @@ function tampilkanRingkasan() {
 
     const jumlahAlpa =
         document.getElementById("jumlahAlpa");
-
+    
+const persentaseKehadiran =
+    document.getElementById("persentaseKehadiran");
+    
     if (!totalJadwal || !sudahHadir || !belumAbsen) {
         return;
     }
@@ -747,6 +750,15 @@ function tampilkanRingkasan() {
     if (jumlahAlpa) {
         jumlahAlpa.textContent = alpa;
     }
+    if (persentaseKehadiran) {
+    const persentase =
+        dataJadwal.length > 0
+            ? (hadir / dataJadwal.length) * 100
+            : 0;
+
+    persentaseKehadiran.textContent =
+        persentase.toFixed(1) + "%";
+
 }
 tampilkanRingkasan();
 // ==============================
