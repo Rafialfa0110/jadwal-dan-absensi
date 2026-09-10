@@ -506,66 +506,127 @@ button[onclick="logoutMahasiswa()"]:hover {
     background-repeat: no-repeat;
 }
 
-#loginHalaman.aktif {
-    display: flex;
+/* ===== LOGIN MODERN ===== */
+
+#loginHalaman {
+    min-height: 100vh !important;
+    width: 100% !important;
+    display: none;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 70px !important;
+    padding: 40px !important;
+
+    background-image:
+        linear-gradient(
+            rgba(10, 55, 100, 0.55),
+            rgba(10, 55, 100, 0.55)
+        ),
+        url("akn-pacitan.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-/* Tampilan informasi login */
+
+#loginHalaman.aktif {
+    display: flex !important;
+}
+
+/* BAGIAN KIRI */
 .login-info {
-    width: 420px;
+    width: 480px;
     color: white;
-    margin-right: 60px;
-    transform: translateY(60px);
+    transform: translateY(40px);
 }
 
 .login-brand {
     font-size: 18px;
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 35px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 28px;
 }
 
 .login-info h2 {
-    font-size: 42px;
-    line-height: 1.15;
-    margin: 0 0 18px;
+    font-size: 44px;
+    line-height: 1.1;
+    margin-bottom: 18px;
 }
 
 .login-info > p {
+    max-width: 480px;
     font-size: 15px;
     line-height: 1.7;
     margin-bottom: 30px;
-    max-width: 400px;
 }
 
+/* MUDAH - AMAN - PRAKTIS */
 .login-feature {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 22px;
+    gap: 15px;
+    margin-bottom: 18px;
 }
 
 .login-feature > span {
     width: 44px;
     height: 44px;
     min-width: 44px;
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 12px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.18);
+    border-radius: 10px;
     font-size: 20px;
 }
 
 .login-feature strong {
     display: block;
-    font-size: 16px;
-    margin-bottom: 4px;
     color: white;
+    font-size: 16px;
+    margin-bottom: 3px;
 }
 
 .login-feature small {
     display: block;
+    color: rgba(255,255,255,0.9);
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.4;
+}
+
+/* KOTAK LOGIN */
+#loginHalaman .login-card {
+    width: 400px !important;
+    max-width: 400px !important;
+    flex-shrink: 0;
+    padding: 30px !important;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}
+
+/* HP */
+@media (max-width: 800px) {
+
+    #loginHalaman {
+        flex-direction: column !important;
+        gap: 25px !important;
+        padding: 25px !important;
+        overflow-y: auto;
+    }
+
+    .login-info {
+        width: 100%;
+        max-width: 500px;
+        transform: none;
+    }
+
+    .login-info h2 {
+        font-size: 32px;
+    }
+
+    #loginHalaman .login-card {
+        width: 100% !important;
+        max-width: 400px !important;
+    }
 }
