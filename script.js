@@ -166,10 +166,12 @@ const dataAbsensi = {
 
 
     document.getElementById("hasilAbsensi").innerHTML =
-        "✅ Absensi berhasil dicatat!";
+    "✅ Absensi berhasil dicatat!";
 
-
-    tampilkanRiwayat();
+// Update tampilan secara langsung
+tampilkanRiwayat();
+tampilkanJadwalHariIni();
+tampilkanRingkasan();
 }
 
 
@@ -906,3 +908,39 @@ function tampilkanModalSukses(judul, pesan) {
 function tutupModalSukses() {
     document.getElementById("modalSukses").classList.remove("aktif");
 }
+window.addEventListener("DOMContentLoaded", function () {
+    const nama = localStorage.getItem("namaMahasiswa");
+    const nim = localStorage.getItem("nimMahasiswa");
+
+    if (nama && nim) {
+        document.getElementById("loginHalaman").classList.remove("aktif");
+        document.getElementById("beranda").classList.add("aktif");
+
+        const profil = document.querySelector(".profil");
+
+        if (profil) {
+            const judulProfil = profil.querySelector("h2");
+
+            if (judulProfil) {
+                judulProfil.textContent = "👋 Halo, " + nama;
+            }
+
+            const dataProfil = profil.querySelectorAll("p");
+
+            if (dataProfil.length > 0) {
+                dataProfil[0].innerHTML =
+                    "<strong>NIM:</strong> " + nim;
+            }
+        }
+
+        const headerText = document.querySelector("header p");
+
+        if (headerText) {
+            headerText.textContent =
+                "Selamat datang, " + nama + " 👋";
+        }
+
+        tampilkanRingkasan();
+        tampilkanJadwalHariIni();
+    }
+});
